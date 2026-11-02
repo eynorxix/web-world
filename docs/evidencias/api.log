@@ -1,0 +1,21 @@
+
+> world-layers-web@1.0.0 test:api
+> node --test tests/api/*.test.js
+
+[API] PUT https://fir-apiclass-default-rtdb.firebaseio.com/users/d804038035f9e59f2bc9ec38d3a42545f374d27358dcd6733e5f7a15af8276c8.json -> 200 Created
+▶ API REST de Firebase: PUT y GET sobre /users
+  ✔ PUT /users/{userKey}.json crea el registro (528.92853ms)
+[API] GET https://fir-apiclass-default-rtdb.firebaseio.com/users/d804038035f9e59f2bc9ec38d3a42545f374d27358dcd6733e5f7a15af8276c8.json -> 200 OK
+  ✔ GET /users/{userKey}.json recupera el registro (454.088062ms)
+[API] GET https://fir-apiclass-default-rtdb.firebaseio.com/users/bcb855cbbf52c28aead266a142866d670c54da1fa2cb2f1543d2b651e9accb16.json -> 200 null
+  ✔ GET /users/{userKey}.json devuelve null si no existe (210.474935ms)
+[API] DELETE https://fir-apiclass-default-rtdb.firebaseio.com/users/d804038035f9e59f2bc9ec38d3a42545f374d27358dcd6733e5f7a15af8276c8.json -> 200 (limpieza)
+✔ API REST de Firebase: PUT y GET sobre /users (1417.144839ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1495.527475

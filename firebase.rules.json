@@ -1,0 +1,19 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$userKey": {
+        ".read": true,
+        ".write": true,
+        ".validate": "!newData.exists() || newData.hasChildren(['displayName', 'email', 'passwordHash', 'salt', 'createdAt'])"
+      }
+    },
+    "tests": {
+      "$testKey": {
+        ".read": true,
+        ".write": true
+      }
+    }
+  }
+}

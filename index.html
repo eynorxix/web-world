@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="World Layers: proyecto de mundo procedural por capas con acceso de jugadores.">
+  <meta name="theme-color" content="#07100c">
+  <title>World Layers | Acceso al proyecto</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="World Layers, inicio">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span class="brand-name">World Layers</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="#proyecto">Proyecto</a>
+      <a href="#sistema">Sistema</a>
+      <a class="nav-cta" href="#acceso">Acceder</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="proyecto">
+      <div class="hero-copy">
+        <p class="eyebrow">Mundo procedural · Hexágonos · Godot 4</p>
+        <h1>Un mundo que se construye <span>capa por capa</span>.</h1>
+        <p class="lead">
+          World Layers es un proyecto de exploración y construcción sobre terrenos
+          hexagonales. El mundo crece a tu alrededor con árboles, vegetación y agua
+          que aparecen hasta el horizonte.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#acceso">Entrar al proyecto</a>
+          <a class="button button-ghost" href="#sistema">Ver cómo funciona</a>
+        </div>
+        <dl class="hero-stats" aria-label="Datos del proyecto">
+          <div>
+            <dt>6</dt>
+            <dd>chunks de vegetación</dd>
+          </div>
+          <div>
+            <dt>241</dt>
+            <dd>bloques de horizonte</dd>
+          </div>
+          <div>
+            <dt>1</dt>
+            <dd>sesión persistente</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-art" aria-label="Arte del proyecto World Layers">
+        <div class="hex-card hex-card-back" aria-hidden="true"></div>
+        <div class="hex-card hex-card-main">
+          <img class="hero-art-pickaxe" src="./assets/pico.png" alt="Pico del proyecto World Layers">
+          <p class="hero-art-caption">WORLD<br>LAYERS</p>
+        </div>
+        <div class="hex-card hex-card-leaf" aria-hidden="true">
+          <img src="./assets/hoja.png" alt="">
+        </div>
+        <div class="hero-art-label">MUNDO HEXAGONAL</div>
+      </div>
+    </section>
+
+    <section class="system" id="sistema" aria-labelledby="sistema-title">
+      <div class="section-heading">
+        <p class="eyebrow">El sistema detrás del mundo</p>
+        <h2 id="sistema-title">Tres capas, una experiencia</h2>
+        <p>
+          La web funciona como puerta de entrada al proyecto: presenta el mundo,
+          registra jugadores y mantiene su sesión sin necesidad de un servidor propio.
+        </p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-number">01</span>
+          <h3>Terreno procedural</h3>
+          <p>Chunks de hexágonos generados con ruido de Perlin y mallas optimizadas para recorrer el mundo sin cortes.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">02</span>
+          <h3>Construcción por capas</h3>
+          <p>Árboles, flores y ríos se cargan por distancia. La vegetación lejana aparece en el horizonte con su propio presupuesto de carga.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-number">03</span>
+          <h3>Acceso persistente</h3>
+          <p>El registro y el inicio de sesión usan Firebase Realtime Database, por lo que la cuenta sigue disponible al volver.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="access" id="acceso" aria-labelledby="acceso-title">
+      <div class="access-copy">
+        <p class="eyebrow">Área de jugadores</p>
+        <h2 id="acceso-title">Tu entrada a World Layers</h2>
+        <p>
+          Crea una cuenta para guardar tu acceso. Al iniciar sesión entrarás a un
+          dashboard de jugador que, por ahora, está listo para recibir tus próximos mundos.
+        </p>
+        <ul class="check-list">
+          <li>Registro guardado en Firebase Realtime Database.</li>
+          <li>Contraseña protegida con PBKDF2-SHA256 y sal aleatoria.</li>
+          <li>Sesión local para no pedir tus datos en cada visita.</li>
+          <li>Publicación estática compatible con GitHub Pages.</li>
+        </ul>
+        <p class="warning-note">
+          Proyecto académico: no uses una contraseña que utilices en otros servicios.
+        </p>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-tabs" role="tablist" aria-label="Acceso de jugador">
+          <button class="auth-tab is-active" id="tab-login" type="button" role="tab"
+                  aria-selected="true" aria-controls="panel-login" data-testid="auth-tab-login">
+            Iniciar sesión
+          </button>
+          <button class="auth-tab" id="tab-register" type="button" role="tab"
+                  aria-selected="false" aria-controls="panel-register" data-testid="auth-tab-register">
+            Crear cuenta
+          </button>
+        </div>
+
+        <div class="auth-panel" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+          <div class="auth-heading">
+            <h2>Bienvenido de vuelta</h2>
+            <p>Accede para abrir tu dashboard de jugador.</p>
+          </div>
+          <form class="auth-form" id="login-form" data-testid="login-form" novalidate>
+            <div class="field">
+              <label for="login-email">Correo</label>
+              <input id="login-email" data-testid="login-email" name="email" type="email"
+                     autocomplete="email" inputmode="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="field">
+              <label for="login-password">Contraseña</label>
+              <input id="login-password" data-testid="login-password" name="password" type="password"
+                     autocomplete="current-password" placeholder="Tu contraseña" required>
+            </div>
+            <button class="button button-primary button-full" type="submit" data-testid="login-submit">
+              Entrar al dashboard
+            </button>
+          </form>
+        </div>
+
+        <div class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
+          <div class="auth-heading">
+            <h2>Crea tu cuenta</h2>
+            <p>Tu registro se guarda directamente en Firebase.</p>
+          </div>
+          <form class="auth-form" id="register-form" data-testid="register-form" novalidate>
+            <div class="field">
+              <label for="register-name">Nombre de jugador</label>
+              <input id="register-name" data-testid="register-name" name="displayName" type="text"
+                     autocomplete="nickname" placeholder="Ej. Eynor" minlength="2" required>
+            </div>
+            <div class="field">
+              <label for="register-email">Correo</label>
+              <input id="register-email" data-testid="register-email" name="email" type="email"
+                     autocomplete="email" inputmode="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="register-password">Contraseña</label>
+                <input id="register-password" data-testid="register-password" name="password" type="password"
+                       autocomplete="new-password" placeholder="Mín. 8 caracteres" minlength="8" required>
+              </div>
+              <div class="field">
+                <label for="register-confirm">Confirmar contraseña</label>
+                <input id="register-confirm" data-testid="register-confirm" name="confirmPassword" type="password"
+                       autocomplete="new-password" placeholder="Repite la contraseña" minlength="8" required>
+              </div>
+            </div>
+            <button class="button button-primary button-full" type="submit" data-testid="register-submit">
+              Crear cuenta y entrar
+            </button>
+          </form>
+        </div>
+
+        <p class="auth-status" id="auth-status" data-testid="auth-status" role="status" aria-live="polite" hidden></p>
+        <p class="auth-note">Firebase RTDB · Web Crypto · GitHub Pages</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>World Layers · Proyecto de mundo procedural.</p>
+    <p>Registro de jugadores con Firebase Realtime Database.</p>
+  </footer>
+
+  <script type="module" src="./js/login-page.js"></script>
+</body>
+</html>

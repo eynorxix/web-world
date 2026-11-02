@@ -1,0 +1,28 @@
+{
+  "usuarios": [
+    {
+      "id": "MU-01",
+      "nombre": "Jugador QA 01",
+      "correo": "qa.multi.01@worldlayers.test",
+      "contrasena": "WorldLayers01!"
+    },
+    {
+      "id": "MU-02",
+      "nombre": "Jugador QA 02",
+      "correo": "qa.multi.02@worldlayers.test",
+      "contrasena": "WorldLayers02!"
+    },
+    {
+      "id": "MU-03",
+      "nombre": "Jugador QA 03",
+      "correo": "qa.multi.03@worldlayers.test",
+      "contrasena": "WorldLayers03!"
+    },
+    {
+      "id": "MU-04",
+      "nombre": "Jugador QA 04",
+      "correo": "qa.multi.04@worldlayers.test",
+      "contrasena": "WorldLayers04!"
+    }
+  ]
+}

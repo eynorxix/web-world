@@ -1,0 +1,28 @@
+
+> world-layers-web@1.0.0 test:unit
+> node --test tests/unit/*.test.js
+
+▶ validateEmail
+  ✔ acepta un correo válido y normaliza espacios/mayúsculas (4.017423ms)
+  ✔ rechaza correo vacío (0.618096ms)
+  ✔ rechaza formatos incompletos o sin dominio (0.520945ms)
+✔ validateEmail (9.373149ms)
+▶ validatePassword
+  ✔ acepta una contraseña de al menos 8 caracteres con letras y números (1.100736ms)
+  ✔ rechaza contraseña vacía o demasiado corta (0.498346ms)
+  ✔ exige al menos una letra y un número (0.436586ms)
+✔ validatePassword (2.988016ms)
+▶ hashPassword
+  ✔ es determinista con la misma contraseña y sal (28.948772ms)
+  ✔ cambia el hash cuando cambia la sal (3.45951ms)
+  ✔ usa PBKDF2 con 150000 iteraciones por defecto y produce 256 bits (124.594243ms)
+  ✔ rechaza contraseña o sal vacías (1.257002ms)
+✔ hashPassword (159.33551ms)
+ℹ tests 10
+ℹ suites 3
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 320.772042

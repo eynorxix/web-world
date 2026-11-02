@@ -1,0 +1,27 @@
+{
+  "fecha": "2026-11-02T02:19:43.937Z",
+  "metodo": "Registro real desde index.html con Playwright",
+  "total": 4,
+  "usuarios": [
+    {
+      "id": "MU-01",
+      "nombre": "Jugador QA 01",
+      "correo": "qa.multi.01@worldlayers.test"
+    },
+    {
+      "id": "MU-02",
+      "nombre": "Jugador QA 02",
+      "correo": "qa.multi.02@worldlayers.test"
+    },
+    {
+      "id": "MU-03",
+      "nombre": "Jugador QA 03",
+      "correo": "qa.multi.03@worldlayers.test"
+    },
+    {
+      "id": "MU-04",
+      "nombre": "Jugador QA 04",
+      "correo": "qa.multi.04@worldlayers.test"
+    }
+  ]
+}

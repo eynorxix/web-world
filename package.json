@@ -1,0 +1,25 @@
+{
+  "name": "world-layers-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Web estática de acceso al proyecto World Layers con Firebase RTDB, tests y GitHub Pages.",
+  "scripts": {
+    "serve": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test": "npm run test:unit && npm run test:api && npm run test:ui",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:api": "node --test tests/api/*.test.js",
+    "test:ui": "playwright test",
+    "test:ui:install": "playwright install chromium",
+    "test:multiuser": "playwright test --config=playwright.multiuser.config.js",
+    "test:multiuser:evidence": "bash tools/run-multiuser-tests.sh",
+    "test:multiuser:cleanup": "node tools/cleanup-multiuser.mjs",
+    "test:all": "npm run test && npm run test:multiuser",
+    "test:live": "node tools/live-smoke.mjs",
+    "test:evidence": "bash tools/run-tests.sh",
+    "report": "python3 tools/fill_report.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard de jugador de World Layers.">
+  <meta name="theme-color" content="#07100c">
+  <title>Dashboard | World Layers</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="dashboard-body">
+  <div id="dashboard-shell" hidden>
+    <header class="dashboard-header">
+      <a class="brand" href="./dashboard.html" aria-label="World Layers, dashboard">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span class="brand-name">World Layers</span>
+      </a>
+      <div class="user-menu">
+        <span class="user-chip">
+          <span class="user-chip-label">Jugador</span>
+          <strong data-testid="user-email" data-user-email>—</strong>
+        </span>
+        <button class="button button-ghost button-small" id="logout-button" data-testid="logout-button" type="button">
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <section class="dashboard-hero" aria-labelledby="dashboard-title">
+        <p class="eyebrow">Sesión activa</p>
+        <h1 id="dashboard-title">Hola, <span data-user-name>jugador</span>.</h1>
+        <p>Tu cuenta está conectada. Este es el punto de partida de tu experiencia en World Layers.</p>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="empty-panel" data-testid="dashboard-empty">
+          <div class="empty-hex" aria-hidden="true">W</div>
+          <p class="eyebrow">Dashboard</p>
+          <h2>Tu dashboard está vacío por ahora</h2>
+          <p>
+            Aquí aparecerán tus mundos, partidas guardadas y estadísticas cuando el
+            proyecto incorpore nuevas funciones.
+          </p>
+          <a class="button button-ghost button-small" href="./index.html#proyecto">Volver a la portada</a>
+        </article>
+
+        <aside class="session-panel" aria-labelledby="session-title">
+          <h2 id="session-title">Sesión</h2>
+          <dl class="session-list">
+            <div>
+              <dt>Jugador</dt>
+              <dd data-user-name>jugador</dd>
+            </div>
+            <div>
+              <dt>Correo</dt>
+              <dd data-user-email>—</dd>
+            </div>
+            <div>
+              <dt>Estado</dt>
+              <dd><span class="status-dot" aria-hidden="true"></span> Activa</dd>
+            </div>
+          </dl>
+          <p class="session-note">La sesión se guarda localmente en este navegador.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer dashboard-footer">
+      <p>World Layers · Dashboard de jugador.</p>
+      <p><a href="./index.html">Volver al inicio</a></p>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/dashboard-page.js"></script>
+</body>
+</html>

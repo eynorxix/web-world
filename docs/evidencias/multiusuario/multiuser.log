@@ -1,0 +1,42 @@
+
+> world-layers-web@1.0.0 test:multiuser
+> playwright test --config=playwright.multiuser.config.js
+
+
+Running 4 tests using 1 worker
+
+(node:40374) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[MULTI] Registro UI OK: MU-01 -> qa.multi.01@worldlayers.test
+[MULTI] Registro UI OK: MU-02 -> qa.multi.02@worldlayers.test
+[MULTI] Registro UI OK: MU-03 -> qa.multi.03@worldlayers.test
+[MULTI] Registro UI OK: MU-04 -> qa.multi.04@worldlayers.test
+[MULTI] Firebase GET OK: MU-01 -> qa.multi.01@worldlayers.test
+[MULTI] Firebase GET OK: MU-02 -> qa.multi.02@worldlayers.test
+[MULTI] Firebase GET OK: MU-03 -> qa.multi.03@worldlayers.test
+[MULTI] Firebase GET OK: MU-04 -> qa.multi.04@worldlayers.test
+  ✓  1 [chromium] › tests/multiuser/multiuser.spec.js:80:3 › Flujo multiusuario real con 4 cuentas › los 4 usuarios existen en Firebase con hash y sal propios (1.7s)
+[MULTI] Ronda API+UI intercalada OK: MU-03 -> qa.multi.03@worldlayers.test
+[MULTI] Ronda API+UI intercalada OK: MU-01 -> qa.multi.01@worldlayers.test
+[MULTI] Ronda API+UI intercalada OK: MU-04 -> qa.multi.04@worldlayers.test
+[MULTI] Ronda API+UI intercalada OK: MU-02 -> qa.multi.02@worldlayers.test
+  ✓  2 [chromium] › tests/multiuser/multiuser.spec.js:100:3 › Flujo multiusuario real con 4 cuentas › ronda mixta API + login intercalado MU-03 -> MU-01 -> MU-04 -> MU-02 (18.1s)
+[MULTI] Sesión simultánea OK: MU-01 -> qa.multi.01@worldlayers.test
+[MULTI] Sesión simultánea OK: MU-02 -> qa.multi.02@worldlayers.test
+[MULTI] Sesión simultánea OK: MU-03 -> qa.multi.03@worldlayers.test
+[MULTI] Sesión simultánea OK: MU-04 -> qa.multi.04@worldlayers.test
+[MULTI] Logout intercalado OK: MU-02
+[MULTI] Recarga con sesión persistente OK: MU-04
+[MULTI] Logout intercalado OK: MU-04
+[MULTI] Logout intercalado OK: MU-01
+[MULTI] Logout intercalado OK: MU-03
+[MULTI] Aislamiento de las 4 sesiones OK.
+  ✓  3 [chromium] › tests/multiuser/multiuser.spec.js:120:3 › Flujo multiusuario real con 4 cuentas › 4 sesiones simultáneas aisladas con cierres intercalados (20.3s)
+[MULTI] Rechazo de contraseña OK: MU-03 -> qa.multi.03@worldlayers.test
+[MULTI] Rechazo de contraseña OK: MU-01 -> qa.multi.01@worldlayers.test
+[MULTI] Rechazo de contraseña OK: MU-04 -> qa.multi.04@worldlayers.test
+[MULTI] Rechazo de contraseña OK: MU-02 -> qa.multi.02@worldlayers.test
+[MULTI] Cuentas conservadas para inspección manual.
+  ✓  4 [chromium] › tests/multiuser/multiuser.spec.js:170:3 › Flujo multiusuario real con 4 cuentas › contraseña incorrecta intercalada no crea sesión (8.1s)
+
+  4 passed (1.2m)

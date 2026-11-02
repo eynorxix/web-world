@@ -1,0 +1,50 @@
+============================================================
+ WORLD LAYERS WEB - PRUEBA 4/4 - CARPETA DE TESTS
+============================================================
+Criterio : carpeta de tests conforme a la plantilla (20%)
+Fecha    : 2026-11-01 22:46:06
+Equipo   : Linux 7.2.8-9-omarchy
+Node     : v26.12.0 | npm 11.20.0
+Carpeta  : /home/eynor/Documents/1_proyectos/web
+------------------------------------------------------------
+
+Herramienta : verificacion de estructura + reporte Excel
+Carpeta     : tests/
+Comando     : bash scripts/qa/04-carpeta-tests.sh
+
+Correspondencia con la rubrica:
+[OK]    tests/unit/security.test.js
+[OK]    tests/api/firebase-users.test.js
+[OK]    tests/ui/auth-screen.spec.js
+[OK]    tests/multiuser/multiuser.spec.js
+[OK]    docs/plantilla_reporte_testing_H4.xlsx
+[OK]    docs/reporte_pruebas.xlsx
+[OK]    docs/REPORTE_PRUEBAS.md
+
+Estructura de tests:
+------------------------------------------------------------
+tests/api/firebase-users.test.js
+tests/multiuser/multiuser.spec.js
+tests/multiuser/pages/AuthPage.js
+tests/multiuser/usuarios.json
+tests/ui/auth-screen.spec.js
+tests/unit/security.test.js
+
+Hojas del reporte Excel:
+------------------------------------------------------------
+Hojas: PruebasUnitarias, PruebasAPI, PruebasUI, Bugs
+Total de hojas: 4
+
+Archivos de evidencia general:
+------------------------------------------------------------
+-rw-r--r-- 1 eynor eynor 1.1K Nov  1 22:05 docs/evidencias/api.log
+-rw-r--r-- 1 eynor eynor  247 Nov  1 22:05 docs/evidencias/live.log
+-rw-r--r-- 1 eynor eynor 3.2K Nov  1 22:05 docs/evidencias/ui.log
+-rw-r--r-- 1 eynor eynor  988 Nov  1 22:05 docs/evidencias/unit.log
+
+Resumen: 4 tipos de prueba, evidencias y reporte H4 verificados.
+
+------------------------------------------------------------
+RESULTADO: PASA
+Evidencia: docs/evidencias/qa-terminal/04-carpeta-tests.log
+------------------------------------------------------------

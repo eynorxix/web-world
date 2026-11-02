@@ -1,0 +1,10 @@
+
+Running 2 tests using 1 worker
+
+[UI] Validando login vacio
+[UI] Validando registro invalido
+  ✓  1 [predeterminado-brave-origin] › tests/ui/auth-screen.spec.js:17:1 › pantalla de acceso: login y registro validan los datos (22.7s)
+[UI] Registro valido; abriendo dashboard
+  ✓  2 [predeterminado-brave-origin] › tests/ui/auth-screen.spec.js:59:1 › pantalla de acceso: registro exitoso guarda sesión y abre dashboard vacío (13.6s)
+
+  2 passed (37.9s)

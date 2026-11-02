@@ -1,0 +1,7 @@
+
+> world-layers-web@1.0.0 test:live
+> node tools/live-smoke.mjs
+
+[LIVE] Registro real en Firebase OK: qa-live-1793585116810@worldlayers.test
+[LIVE] Logout y login real OK. Dashboard vacío visible.
+[LIVE] Limpieza de la cuenta de prueba: HTTP 200

@@ -1,0 +1,239 @@
+============================================================
+ WORLD LAYERS WEB - VALIDACION COMPLETA - 4 CRITERIOS
+============================================================
+Criterio : unitarias + API + UI + carpeta de tests
+Fecha    : 2026-11-01 22:45:53
+Equipo   : Linux 7.2.8-9-omarchy
+Node     : v26.12.0 | npm 11.20.0
+Carpeta  : /home/eynor/Documents/1_proyectos/web
+------------------------------------------------------------
+
+
+============================================================
+ EJECUTANDO: 01-unitarias.sh
+============================================================
+============================================================
+ WORLD LAYERS WEB - PRUEBA 1/4 - FUNCIONES UNITARIAS
+============================================================
+Criterio : 3 funciones unitarias (20%)
+Fecha    : 2026-11-01 22:45:54
+Equipo   : Linux 7.2.8-9-omarchy
+Node     : v26.12.0 | npm 11.20.0
+Carpeta  : /home/eynor/Documents/1_proyectos/web
+------------------------------------------------------------
+
+Herramienta : Node.js test runner (node:test)
+Archivo     : tests/unit/security.test.js
+Comando     : npm run test:unit
+
+Funciones evaluadas:
+  1. validateEmail()
+  2. validatePassword()
+  3. hashPassword()
+
+Ejecutando pruebas unitarias...
+------------------------------------------------------------
+
+> world-layers-web@1.0.0 test:unit
+> node --test tests/unit/*.test.js
+
+▶ validateEmail
+  ✔ acepta un correo válido y normaliza espacios/mayúsculas (4.017423ms)
+  ✔ rechaza correo vacío (0.618096ms)
+  ✔ rechaza formatos incompletos o sin dominio (0.520945ms)
+✔ validateEmail (9.373149ms)
+▶ validatePassword
+  ✔ acepta una contraseña de al menos 8 caracteres con letras y números (1.100736ms)
+  ✔ rechaza contraseña vacía o demasiado corta (0.498346ms)
+  ✔ exige al menos una letra y un número (0.436586ms)
+✔ validatePassword (2.988016ms)
+▶ hashPassword
+  ✔ es determinista con la misma contraseña y sal (28.948772ms)
+  ✔ cambia el hash cuando cambia la sal (3.45951ms)
+  ✔ usa PBKDF2 con 150000 iteraciones por defecto y produce 256 bits (124.594243ms)
+  ✔ rechaza contraseña o sal vacías (1.257002ms)
+✔ hashPassword (159.33551ms)
+ℹ tests 10
+ℹ suites 3
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 320.772042
+
+Resumen: 3 funciones, 10 casos, 3 suites.
+
+------------------------------------------------------------
+RESULTADO: PASA
+Evidencia: docs/evidencias/qa-terminal/01-unitarias.log
+------------------------------------------------------------
+
+============================================================
+ EJECUTANDO: 02-api.sh
+============================================================
+============================================================
+ WORLD LAYERS WEB - PRUEBA 2/4 - API REST FIREBASE
+============================================================
+Criterio : 2 endpoints API (20%)
+Fecha    : 2026-11-01 22:45:54
+Equipo   : Linux 7.2.8-9-omarchy
+Node     : v26.12.0 | npm 11.20.0
+Carpeta  : /home/eynor/Documents/1_proyectos/web
+------------------------------------------------------------
+
+Herramienta : Node.js test runner + Firebase Realtime Database REST
+Archivo     : tests/api/firebase-users.test.js
+Comando     : npm run test:api
+
+Endpoints evaluados:
+  1. PUT /users/{userKey}.json
+  2. GET /users/{userKey}.json
+
+Casos adicionales del mismo archivo:
+  - GET de una clave inexistente (debe responder null)
+  - DELETE de limpieza (elimina el usuario temporal)
+
+Ejecutando pruebas de API contra Firebase real...
+------------------------------------------------------------
+
+> world-layers-web@1.0.0 test:api
+> node --test tests/api/*.test.js
+
+[API] PUT https://fir-apiclass-default-rtdb.firebaseio.com/users/e4bcdc72524fb774789c6e784a874f8cee3b376851d6d1f91ef43c07111cc994.json -> 200 Created
+▶ API REST de Firebase: PUT y GET sobre /users
+  ✔ PUT /users/{userKey}.json crea el registro (746.943712ms)
+[API] GET https://fir-apiclass-default-rtdb.firebaseio.com/users/e4bcdc72524fb774789c6e784a874f8cee3b376851d6d1f91ef43c07111cc994.json -> 200 OK
+  ✔ GET /users/{userKey}.json recupera el registro (502.482676ms)
+[API] GET https://fir-apiclass-default-rtdb.firebaseio.com/users/16f472d9f40521ebdf1d0eee8e03ebc87551497aeb30708345d1f90f55f4568c.json -> 200 null
+  ✔ GET /users/{userKey}.json devuelve null si no existe (213.077233ms)
+[API] DELETE https://fir-apiclass-default-rtdb.firebaseio.com/users/e4bcdc72524fb774789c6e784a874f8cee3b376851d6d1f91ef43c07111cc994.json -> 200 (limpieza)
+✔ API REST de Firebase: PUT y GET sobre /users (1717.692377ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1866.317465
+
+Resumen: 2 endpoints evaluados, 4 casos ejecutados, limpieza automatica.
+
+------------------------------------------------------------
+RESULTADO: PASA
+Evidencia: docs/evidencias/qa-terminal/02-api.log
+------------------------------------------------------------
+
+============================================================
+ EJECUTANDO: 03-ui.sh
+============================================================
+============================================================
+ WORLD LAYERS WEB - PRUEBA 3/4 - PANTALLA DE UI
+============================================================
+Criterio : 1 pantalla UI (20%)
+Fecha    : 2026-11-01 22:45:57
+Equipo   : Linux 7.2.8-9-omarchy
+Node     : v26.12.0 | npm 11.20.0
+Carpeta  : /home/eynor/Documents/1_proyectos/web
+------------------------------------------------------------
+
+Herramienta : Playwright + navegador predeterminado
+Navegador   : Brave Origin (/usr/bin/brave-origin)
+Archivo     : tests/ui/auth-screen.spec.js
+Comando     : npm run test:ui
+
+Pantalla evaluada:
+  index.html -> login / registro -> dashboard.html
+
+Escenarios:
+  1. Validacion de datos invalidos en login y registro
+  2. Registro exitoso, sesion guardada y dashboard vacio
+
+Ejecutando pruebas de UI...
+------------------------------------------------------------
+
+> world-layers-web@1.0.0 test:ui
+> playwright test
+
+
+Running 2 tests using 1 worker
+
+  ✓  1 [predeterminado-brave-origin] › tests/ui/auth-screen.spec.js:9:1 › pantalla de acceso: login y registro validan los datos (2.7s)
+  ✓  2 [predeterminado-brave-origin] › tests/ui/auth-screen.spec.js:42:1 › pantalla de acceso: registro exitoso guarda sesión y abre dashboard vacío (4.1s)
+
+  2 passed (8.0s)
+
+Capturas generadas por la prueba:
+  docs/evidencias/ui-login.png
+  docs/evidencias/ui-dashboard.png
+
+------------------------------------------------------------
+RESULTADO: PASA
+Evidencia: docs/evidencias/qa-terminal/03-ui.log
+------------------------------------------------------------
+
+============================================================
+ EJECUTANDO: 04-carpeta-tests.sh
+============================================================
+============================================================
+ WORLD LAYERS WEB - PRUEBA 4/4 - CARPETA DE TESTS
+============================================================
+Criterio : carpeta de tests conforme a la plantilla (20%)
+Fecha    : 2026-11-01 22:46:06
+Equipo   : Linux 7.2.8-9-omarchy
+Node     : v26.12.0 | npm 11.20.0
+Carpeta  : /home/eynor/Documents/1_proyectos/web
+------------------------------------------------------------
+
+Herramienta : verificacion de estructura + reporte Excel
+Carpeta     : tests/
+Comando     : bash scripts/qa/04-carpeta-tests.sh
+
+Correspondencia con la rubrica:
+[OK]    tests/unit/security.test.js
+[OK]    tests/api/firebase-users.test.js
+[OK]    tests/ui/auth-screen.spec.js
+[OK]    tests/multiuser/multiuser.spec.js
+[OK]    docs/plantilla_reporte_testing_H4.xlsx
+[OK]    docs/reporte_pruebas.xlsx
+[OK]    docs/REPORTE_PRUEBAS.md
+
+Estructura de tests:
+------------------------------------------------------------
+tests/api/firebase-users.test.js
+tests/multiuser/multiuser.spec.js
+tests/multiuser/pages/AuthPage.js
+tests/multiuser/usuarios.json
+tests/ui/auth-screen.spec.js
+tests/unit/security.test.js
+
+Hojas del reporte Excel:
+------------------------------------------------------------
+Hojas: PruebasUnitarias, PruebasAPI, PruebasUI, Bugs
+Total de hojas: 4
+
+Archivos de evidencia general:
+------------------------------------------------------------
+-rw-r--r-- 1 eynor eynor 1.1K Nov  1 22:05 docs/evidencias/api.log
+-rw-r--r-- 1 eynor eynor  247 Nov  1 22:05 docs/evidencias/live.log
+-rw-r--r-- 1 eynor eynor 3.2K Nov  1 22:05 docs/evidencias/ui.log
+-rw-r--r-- 1 eynor eynor  988 Nov  1 22:05 docs/evidencias/unit.log
+
+Resumen: 4 tipos de prueba, evidencias y reporte H4 verificados.
+
+------------------------------------------------------------
+RESULTADO: PASA
+Evidencia: docs/evidencias/qa-terminal/04-carpeta-tests.log
+------------------------------------------------------------
+
+============================================================
+ RESUMEN GENERAL
+============================================================
+RESULTADO FINAL: PASA
+Logs: docs/evidencias/qa-terminal/
+
+------------------------------------------------------------
+RESULTADO: PASA
+Evidencia: docs/evidencias/qa-terminal/05-todo.log
+------------------------------------------------------------

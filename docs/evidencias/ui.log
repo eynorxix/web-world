@@ -1,0 +1,44 @@
+
+> world-layers-web@1.0.0 test:ui
+> playwright test
+
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:11] "GET / HTTP/1.1" 200 -
+
+Running 2 tests using 1 worker
+
+(node:36041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:11] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:11] "GET /assets/hoja.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /css/styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /js/login-page.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /assets/pico.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /assets/hex-texture.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /js/session.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /js/security.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /js/auth-service.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /js/config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET /js/firebase-client.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:12] "GET / HTTP/1.1" 304 -
+  ✓  1 [chromium] › tests/ui/auth-screen.spec.js:9:1 › pantalla de acceso: login y registro validan los datos (1.7s)
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /assets/pico.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /assets/hoja.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /css/styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /js/login-page.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /assets/hex-texture.png HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /js/auth-service.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /js/session.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /js/security.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /js/firebase-client.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET /js/config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:13] "GET / HTTP/1.1" 304 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:15] "GET /dashboard.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:15] "GET /css/styles.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:15] "GET /js/dashboard-page.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:15] "GET /js/session.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:15] "GET /js/config.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [01/Nov/2026 22:05:15] "GET /assets/hex-texture.png HTTP/1.1" 200 -
+  ✓  2 [chromium] › tests/ui/auth-screen.spec.js:42:1 › pantalla de acceso: registro exitoso guarda sesión y abre dashboard vacío (2.5s)
+
+  2 passed (5.0s)
